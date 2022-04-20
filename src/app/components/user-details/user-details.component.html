@@ -1,1 +1,14 @@
-<p>user-details works!</p>
+<p>{{ userDetail.login }}</p>
+<p>{{ userDetail.bio }}</p>
+<img src="{{ userDetail.avatar_url }}" alt="" />
+<p>year joined: {{ userDetail.created_at | date }}</p>
+
+<hr />
+<h2 [ngStyle]="{'text-decoration': 'underline'}">Repos</h2>
+<div *ngFor="let repo of repoData">
+  <p>{{ repo.name }}</p>
+  <p>{{ repo.description }}</p>
+  <p>{{ repo.clone_url }}</p>
+  <p>{{ repo.created_at }}</p>
+  <p>{{ repo.language }}</p>
+</div>
