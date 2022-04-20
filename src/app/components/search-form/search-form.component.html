@@ -1,0 +1,15 @@
+<div class="form-container  ">
+  <form [formGroup]="searchForm" (ngSubmit)="searchUsername()">
+    <!-- <label for="username">Username:</label> -->
+    <input
+      type="text"
+      name="username"
+      id="username"
+      class="form-control w-25"
+      placeholder="Github username.."
+      formControlName="username"
+    />
+
+    <button class="btn btn-sm btn-outline-primary mt-1" [disabled]="!searchForm.valid ">Search</button>
+  </form>
+</div>
