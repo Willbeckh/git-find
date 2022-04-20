@@ -9,12 +9,12 @@
     </div>
 
     <div class="user-details pb-4">
-      <a href="" class="user-profile__name">{{ userDetail.login }}</a>
+      <a class="user-profile__name">{{ userDetail.login }}</a>
       <p class="bio text-muted">{{ userDetail.bio }}</p>
       <p class="fs-6 text-muted">Joined: {{ userDetail.created_at | date }}</p>
       <fa-icon [icon]="faLink"></fa-icon>
       <span
-        ><a href="">{{ userDetail.blog }}</a></span
+        ><a [attr.href]="userDetail.blog">{{ userDetail.blog }}</a></span
       >
     </div>
   </div>
@@ -32,13 +32,13 @@
           <p class="repo__name card-title">{{ repo.name }}</p>
           <p class="card-text repo__text">{{ repo.description }}</p>
           <div class="repo__link">
-            <fa-icon [icon]="faLink"></fa-icon>
-            <a href=""
+            <fa-icon [icon]="faLink"></fa-icon>Clone:
+            <a [attr.href]="repo.clone_url" target="_blank"
               ><span>{{ repo.clone_url }}</span></a
             >
           </div>
           <div class="footer">
-            <span class="language__tag me-2">{{ repo.language }} </span>
+            <span class="language__tag me-2">{{ repo.language }} </span>|
             <span class="time__stamp">{{ repo.created_at | date }}</span>
           </div>
         </div>
