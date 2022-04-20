@@ -1,0 +1,34 @@
+.container {
+  width: 80%;
+  height: 200px;
+  position: relative;
+}
+
+.search-page {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  transform: translate(10%, 50%);
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search__btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.search__btn button {
+  background: none;
+  color: blueviolet;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search__btn button:hover {
+    background-color: #fff;
+  color: rgb(19, 192, 204);
+}

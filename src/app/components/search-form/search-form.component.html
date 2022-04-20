@@ -1,15 +1,27 @@
-<div class="form-container  ">
-  <form [formGroup]="searchForm" (ngSubmit)="searchUsername()">
-    <!-- <label for="username">Username:</label> -->
-    <input
-      type="text"
-      name="username"
-      id="username"
-      class="form-control w-25"
-      placeholder="Github username.."
-      formControlName="username"
-    />
-
-    <button class="btn btn-sm btn-outline-primary mt-1" [disabled]="!searchForm.valid ">Search</button>
-  </form>
+<div class="container">
+  <div class="search-page">
+    <h3 class="text-center mb-4">The search is over!</h3>
+    <form [formGroup]="searchForm" (ngSubmit)="searchUsername()" class="">
+      <!-- <label for="username">Username:</label> -->
+      <div class="search-bar">
+        <input
+          type="text"
+          name="username"
+          id="username"
+          class="form-control form-control-lg"
+          placeholder="Github username.."
+          formControlName="username"
+        />
+        <div class="search__btn">
+          <button
+            class="btn btn-sm mt-1"
+            [disabled]="!searchForm.valid"
+          >
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-footer></app-footer>
 </div>
