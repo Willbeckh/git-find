@@ -1,14 +1,48 @@
-<p>{{ userDetail.login }}</p>
-<p>{{ userDetail.bio }}</p>
-<img src="{{ userDetail.avatar_url }}" alt="" />
-<p>year joined: {{ userDetail.created_at | date }}</p>
+<div class="container">
+  <div class="user-profile m-4 d-flex justify-content-evenly">
+    <div class="user-img me-2">
+      <img
+        src="{{ userDetail.avatar_url }}"
+        alt="user avatar"
+        class="img img-fluid user-profile__image"
+      />
+    </div>
 
-<hr />
-<h2 [ngStyle]="{'text-decoration': 'underline'}">Repos</h2>
-<div *ngFor="let repo of repoData">
-  <p>{{ repo.name }}</p>
-  <p>{{ repo.description }}</p>
-  <p>{{ repo.clone_url }}</p>
-  <p>{{ repo.created_at }}</p>
-  <p>{{ repo.language }}</p>
+    <div class="user-details pb-4">
+      <a href="" class="user-profile__name">{{ userDetail.login }}</a>
+      <p class="bio text-muted">{{ userDetail.bio }}</p>
+      <p class="fs-6 text-muted">Joined: {{ userDetail.created_at | date }}</p>
+      <fa-icon [icon]="faLink"></fa-icon>
+      <span
+        ><a href="">{{ userDetail.blog }}</a></span
+      >
+    </div>
+  </div>
+
+  <!-- repo section -->
+
+  <hr />
+  <div class="repos row">
+    <h2 [ngStyle]="{ 'text-decoration': 'underline' }" class="text-center m-5">
+      Repos
+    </h2>
+    <div class="repo-details row d-flex justify-content-center">
+      <div *ngFor="let repo of repoData" class="card repo col-lg-3 w-25">
+        <div class="card-body">
+          <p class="repo__name card-title">{{ repo.name }}</p>
+          <p class="card-text repo__text">{{ repo.description }}</p>
+          <div class="repo__link">
+            <fa-icon [icon]="faLink"></fa-icon>
+            <a href=""
+              ><span>{{ repo.clone_url }}</span></a
+            >
+          </div>
+          <div class="footer">
+            <span class="language__tag me-2">{{ repo.language }} </span>
+            <span class="time__stamp">{{ repo.created_at | date }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

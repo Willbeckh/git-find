@@ -1,12 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GithubService } from 'src/app/services/github.service';
+
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-user-details',
   templateUrl: './user-details.component.html',
   styleUrls: ['./user-details.component.css'],
 })
 export class UserDetailsComponent implements OnInit {
+  faLink = faLink; // icon
   username!: string;
   userDetail: any;
   repoData!: any;
@@ -26,7 +29,7 @@ export class UserDetailsComponent implements OnInit {
     // get user details
     this.githubService.getUser(this.username).then((data) => {
       this.userDetail = data;
-      console.log('userDetail', typeof this.userDetail);
+      console.log('userDetail', this.userDetail);
     });
 
     // gets the repos of the user
