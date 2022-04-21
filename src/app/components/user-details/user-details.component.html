@@ -12,10 +12,13 @@
       <a class="user-profile__name">{{ userDetail.login }}</a>
       <p class="bio text-muted">{{ userDetail.bio }}</p>
       <p class="fs-6 text-muted">Joined: {{ userDetail.created_at | date }}</p>
-      <fa-icon [icon]="faLink"></fa-icon>
-      <span
-        ><a [attr.href]="userDetail.blog">{{ userDetail.blog }}</a></span
-      >
+      <p class="fs-6 text-muted">repositories: {{ repoData.length }}</p>
+      <div *ngIf="userDetail.blog">
+        <fa-icon [icon]="faLink"></fa-icon>
+        <span
+          ><a [attr.href]="userDetail.blog">{{ userDetail.blog }}</a></span
+        >
+      </div>
     </div>
   </div>
 
