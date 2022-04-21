@@ -12,6 +12,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DaysCountPipe } from './pipes/days-count.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     UserDetailsComponent,
     SearchFormComponent,
     FooterComponent,
+    DaysCountPipe,
   ],
   imports: [
     BrowserModule,
