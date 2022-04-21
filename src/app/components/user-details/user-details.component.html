@@ -38,9 +38,10 @@
             >
           </div>
           <div class="footer">
-            <span class="language__tag me-2">{{ repo.language }} </span>|
-            <span class="time__stamp">{{ repo.created_at | date }}</span>
-            <span class="days__count"
+            <span class="language__tag me-2" *ngIf="repo.language"
+              >{{ repo.language }} </span
+            >| <span class="time__stamp">{{ repo.created_at | date }}</span> |
+            <span class="days__count" appHighlight
               >{{ repo.created_at | daysCount }} days ago.</span
             >
           </div>
