@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DaysCountPipe } from './pipes/days-count.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { FooterComponent } from './components/footer/footer.component';
     UserDetailsComponent,
     SearchFormComponent,
     FooterComponent,
+    DaysCountPipe,
+    HighlightDirective,
   ],
   imports: [
     BrowserModule,
